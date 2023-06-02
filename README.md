@@ -36,4 +36,11 @@ Three different machine learning models were developed to predict pore pressure:
 3. ExtraTreesRegressor: with insights from the Pycaret model, an ExtraTreesRegressor algorithm (from the Sklearn Library) was used to develop a custom machine learning model. The model was fine-tuned and evaluated, resulting in an R2 score of 97.4%, a little higher than the PyCaret model
 
 
+## Helpful tips to work with the various models 
+
+In the models folder, you will find that different models have been developed to predict pore pressure, and each of these models have been trained on different representations of the dataset. 
+1. The evalml.Xgboost_Regressor is the first model that was trained using evalml, an auto machine learning framework. To work with this model, you do not need any prior data preprocessing, you simply need to load the model and ask it to make predictions using the raw data. However, its performance is only at 95% compared to the rest of the models. 
+2. To work with the pycaret model, you have to load any of the processed dataset (check the folder 'Dataset/processed/*'). Keep in mind that you will need to concat the feature and label data (i.e for any of Train, validation, or test dataset).
+3. For the sklearn model, use this "pipeline_ExtraTreesRegressor_r2_97_4.pkl", It is the saved pipeline, which contains both the saved model, as well as the preprocessor. You can use the same pre-processed data as earlier, but you do NOT need to concatenate it. It should give you the required output.
+
 "#Pore_Pressure_Prediction_for_Oil_and_Gas" 
